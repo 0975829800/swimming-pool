@@ -28,12 +28,12 @@ public class Discount {
 		} else if (coach.getStudent() < 0 || coach.getCoach() < 0){
 			throw new Throwable("people should more than zero.");
 		} else {
-			queryDiscount(identity, hour);
+			queryDiscount(identity,coach, hour);
 		}
 	}
 
 	private void queryDiscount(Identity identity,Coach coach, int hour) {
-		if(coach.GetCoach() == 0){
+		if(coach.getCoach() == 0){
 			if (identity.isMember()) {
 				discount = 0.5;
 			} else if (identity.isGroup()) {
@@ -46,12 +46,12 @@ public class Discount {
 				discount = 1;
 			}
 		} else{
-			if(coach.GetCoach() + coach.GetStudent() <= 10){
+			if(coach.getCoach() + coach.getStudent() <= 10){
 				payment = 3000;
-				payment *= coach.GetTime().length*2;
+				payment *= coach.getTime().length*2;
 			}else{
-				payment = coach.GetCoach()*120+coach.GetStudent()*70;
-				payment *= coach.GetTime().length*2;
+				payment = coach.getCoach()*120+coach.getStudent()*70;
+				payment *= coach.getTime().length*2;
 			}
 		}
 

@@ -17,7 +17,8 @@ public class Main {
 		String dateTime = sdf.format(new Date()); // new Date() 為獲取當前系統時間
 
 		Identity identity = new Identity(age, memberAuth, groupAuth);
-		Discount discount = new Discount(identity, dateTime);
+		Coach coach = new Coach(0,0,new int[0]);
+		Discount discount = new Discount(identity, coach, dateTime);
 		Payment payment = new Payment(discount, dateTime);
 		payment.print();
 	}
